@@ -16,6 +16,45 @@
 
 
 <div ng-controller="TestController">
+
+    <h2>CRUD Operations</h2>
+    <table id="crudTable" class="display">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Position</th>
+                <th>Office</th>
+                <th>Age</th>
+                <th>Salary</th>
+            </tr>
+        </thead>
+    </table>
+
+    <link href="//cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css" rel="stylesheet" />
+
+    @section scripts{ 
+        <script src="//cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+
+        <script>
+            $(document).ready(function () {
+                $("#crudTable").DataTable({
+                    "ajax": {
+                        "url": "/Account/GetData",
+                        "type": "GET",
+                        "datatype" :"json"
+                    },
+                    "columns": [
+                        { "data": "Name" },
+                        { "data": "Position" },
+                        { "data": "Office" },
+                        { "data": "Age" },
+                        { "data": "Salary" },
+                    ]
+                });
+            })
+        </script>
+    }
+    <!--
     <button>Add New +</button>
 
     <div ng-repeat="item in list">
@@ -33,6 +72,7 @@
     <form action="AddNewData" method="post">
         <button type="submit" value="submit">Log In</button>
     </form>
+    -->
 </div>
 <!--Modules-->
 <script src="~/js/app.js"></script>

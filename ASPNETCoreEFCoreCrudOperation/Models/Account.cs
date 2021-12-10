@@ -1,13 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿
+
 
 namespace ASPNETCoreEFCoreCrudOperation.Models
 {
-    public class Account
+    using System;
+    using System.Collections.Generic;
+
+    public partial class Account
     {
+        public string EmployeeID { get; set; }
         public string Name { get; set; }
-        public string Password { get; set; }
+        public string Position { get; set; }
+        public string Office { get; set; }
+        public Nullable<int> Age { get; set; }
+        public Nullable<int> Salary { get; set; }
     }
 }

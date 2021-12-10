@@ -3,9 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-using Microsoft.AspNetCore.Mvc;
+using System.Web;
+using System.Web.Mvc;
+
+//using Microsoft.AspNetCore.Mvc;
 using ASPNETCoreEFCoreCrudOperation.Models;
 using Microsoft.Data.SqlClient;
+
 
 namespace ASPNETCoreEFCoreCrudOperation.Controllers
 {
@@ -15,7 +19,16 @@ namespace ASPNETCoreEFCoreCrudOperation.Controllers
         SqlCommand com = new SqlCommand();
         SqlDataReader dr;
 
-        // GET: Account
+        // GET: /Account/
+
+        /*public ActionResult GetData()
+        {
+            using(DBModel db = new DBModel())
+            {
+
+            }
+        }*/
+
         [HttpGet]//What's the use of this? The program worked normally when I try to comment this request.
         public ActionResult Login() //Function name really matters to indicate which .html name should be opened upon runtime otherwise I'd get an error.
         {
@@ -31,7 +44,7 @@ namespace ASPNETCoreEFCoreCrudOperation.Controllers
             connectionString();
             con.Open();
             com.Connection = con;
-            com.CommandText = "select * from dbo.tbl_login where _username='" + acc.Name + "'  and _password= '" + acc.Password + "' ";
+            //com.CommandText = "select * from dbo.tbl_login where _username='" + acc.Name + "'  and _password= '" + acc.Password + "' ";
             dr = com.ExecuteReader();
             if (dr.Read())
             {

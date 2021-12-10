@@ -5,12 +5,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Models\Account.cs~RF2917133d.TMP" />
     <None Remove="Views\Home\CRUD.cshtml~RF2849704b.TMP" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="bootstrap" Version="5.1.2" />
     <PackageReference Include="jQuery.UI.Combined" Version="1.13.0" />
+    <PackageReference Include="Microsoft.AspNet.Mvc" Version="5.1.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.4" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.4">
       <PrivateAssets>all</PrivateAssets>
